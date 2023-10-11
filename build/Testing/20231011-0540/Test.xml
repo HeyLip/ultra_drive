@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20231011-0540-Experimental"
+	Name="harim-X5957"
+	Generator="ctest-3.17.5"
+	CompilerName="/usr/bin/clang++"
+	CompilerVersion="10.0.0"
+	OSName="Linux"
+	Hostname="harim-X5957"
+	OSRelease="5.15.0-86-generic"
+	OSVersion="#96~20.04.1-Ubuntu SMP Thu Sep 21 13:23:37 UTC 2023"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="158"
+	ProcessorCacheSize="12288"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="15699"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2600"
+	>
+	<Testing>
+		<StartDateTime>Oct 11 14:40 KST</StartDateTime>
+		<StartTestTime>1697002859</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 11 14:40 KST</EndDateTime>
+		<EndTestTime>1697002859</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

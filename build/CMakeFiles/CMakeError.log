@@ -1,0 +1,60 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/harim/xycar_ws/src/ultra_drive/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a82ac/fast && /usr/bin/make  -f CMakeFiles/cmTC_a82ac.dir/build.make CMakeFiles/cmTC_a82ac.dir/build
+make[1]: Entering directory '/home/harim/xycar_ws/src/ultra_drive/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a82ac.dir/src.c.o
+/usr/bin/clang   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a82ac.dir/src.c.o   -c /home/harim/xycar_ws/src/ultra_drive/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a82ac
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a82ac.dir/link.txt --verbose=1
+/usr/bin/clang  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_a82ac.dir/src.c.o  -o cmTC_a82ac 
+/usr/bin/ld: CMakeFiles/cmTC_a82ac.dir/src.c.o: in function `main':
+src.c:(.text+0x35): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x41): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x4d): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x5f): undefined reference to `pthread_join'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_a82ac.dir/build.make:107: cmTC_a82ac] Error 1
+make[1]: Leaving directory '/home/harim/xycar_ws/src/ultra_drive/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:141: cmTC_a82ac/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/harim/xycar_ws/src/ultra_drive/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_107fa/fast && /usr/bin/make  -f CMakeFiles/cmTC_107fa.dir/build.make CMakeFiles/cmTC_107fa.dir/build
+make[1]: Entering directory '/home/harim/xycar_ws/src/ultra_drive/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_107fa.dir/CheckFunctionExists.c.o
+/usr/bin/clang   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_107fa.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_107fa
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_107fa.dir/link.txt --verbose=1
+/usr/bin/clang  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_107fa.dir/CheckFunctionExists.c.o  -o cmTC_107fa  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_107fa.dir/build.make:107: cmTC_107fa] Error 1
+make[1]: Leaving directory '/home/harim/xycar_ws/src/ultra_drive/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:141: cmTC_107fa/fast] Error 2
+
+
+

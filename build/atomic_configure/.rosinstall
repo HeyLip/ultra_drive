@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/harim/xycar_ws/src/ultra_drive/build/devel/setup.sh
